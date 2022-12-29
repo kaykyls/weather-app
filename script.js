@@ -56,7 +56,7 @@ function createDiv() {
     div.innerHTML =
     `
         <div class="city">
-            <i class="fa-solid fa-location-dot"></i><span class="city-name"></span><img id="contry-flag" src="" alt="Country Flag">
+            <i class="fa-solid fa-location-dot"></i><span class="city-name"></span><img crossorigin="anonymous" id="contry-flag" src="" alt="Country Flag">
         </div>
         <div class="weather-condition">
             <img class="weather-icon" src="" alt="">
