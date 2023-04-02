@@ -42,7 +42,10 @@ async function viewWeatherData(data) {
     weatherResultDiv.querySelector(".city-name").innerText = `${data.name}`
     weatherResultDiv.querySelector(".weather-degrees").innerText = `${Number(data.main.temp).toFixed(1)}° C`
     weatherResultDiv.querySelector(".weather-condition-text").innerText = `${(data.weather[0].description).charAt(0).toUpperCase() + (data.weather[0].description).slice(1)}`
-    weatherResultDiv.querySelector(".city img").src = `https://countryflagsapi.com/png/${data.sys.country}`
+
+    console.log(data.sys.country)
+
+    weatherResultDiv.querySelector(".city img").src = `https://flagsapi.com/${data.sys.country}/flat/64.png`
     weatherResultDiv.querySelector(".humidity").innerText = `${data.main.humidity}%`
     weatherResultDiv.querySelector(".wind").innerText = `${(data.wind.speed).toFixed(1)}km/h`
     weatherResultDiv.querySelector(".weather-icon").src = `./icons/${data.weather[0].icon}.svg`
@@ -56,7 +59,7 @@ function createDiv() {
     div.innerHTML =
     `
         <div class="city">
-            <i class="fa-solid fa-location-dot"></i><span class="city-name"></span><img crossorigin="anonymous" id="contry-flag" src="" alt="Country Flag">
+            <i class="fa-solid fa-location-dot"></i><span class="city-name"></span><img id="contry-flag" src="" alt="Country Flag">
         </div>
         <div class="weather-condition">
             <img class="weather-icon" src="" alt="">
